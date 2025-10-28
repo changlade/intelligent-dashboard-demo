@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Intelligent Dashboard Demo App - AI-powered insights and dashboards">
+    <meta name="theme-color" content="#0066cc">
+    <title>Intelligent Dashboard Demo App</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="alternate icon" href="/favicon.ico">
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <div class="logo-section">
+                <h1 class="app-title">Intelligent Dashboard Demo App</h1>
+            </div>
+        </div>
+    </header>
+
+    <main style="padding: 0; margin: 0; max-width: 100%; height: calc(100vh - 80px);">
+        <!-- Split layout: Dashboard on left (70%), Chatbot on right (30%) -->
+        <div style="display: grid; grid-template-columns: 70% 30%; gap: 0; height: 100%;">
+            <!-- Dashboard Section -->
+            <div style="display: flex; flex-direction: column; height: 100%;">
+                <div class="dashboard-container" id="dashboardContainer" style="flex: 1; border-radius: 0; box-shadow: none; height: 100%;">
+                    <div class="loading">
+                        <div class="spinner"></div>
+                        <span>Loading dashboard...</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chatbot Section -->
+            <div style="display: flex; flex-direction: column; height: 100%;">
+                <div class="chat-container" style="flex: 1; border-radius: 0; box-shadow: none; height: 100%;">
+                    <div class="chat-messages" id="chatMessages">
+                        <div class="empty-state">
+                            <div class="empty-state-icon">💬</div>
+                            <h3 class="empty-state-title">Start a Conversation</h3>
+                            <p>Ask me about product analysis and insights!</p>
+                            <div style="margin-top: 1rem; display: flex; flex-direction: column; gap: 0.5rem; align-items: center;">
+                                <button class="btn btn-secondary" onclick="sendSampleQuestion('How many products were created each month ?')">
+                                    Products created by month
+                                </button>
+                                <button class="btn btn-secondary" onclick="sendSampleQuestion('What are the different ingredients types available in the ingredients master ?')">
+                                    Ingredient types available
+                                </button>
+                                <button class="btn btn-secondary" onclick="sendSampleQuestion('What is the average weight of packaging components')">
+                                    Avg packaging weight
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chat-input-container">
+                        <div style="display: flex; justify-content: flex-end; margin-bottom: 0.5rem;">
+                            <button class="btn btn-secondary" onclick="resetChat()" style="padding: 0.5rem 1rem; font-size: 0.875rem;">
+                                🔄 New Conversation
+                            </button>
+                        </div>
+                        <form class="chat-input-form" id="chatForm">
+                            <textarea 
+                                id="chatInput" 
+                                class="chat-input" 
+                                placeholder="Type your question here..."
+                                rows="2"
+                                required
+                            ></textarea>
+                            <button type="submit" class="send-btn" id="sendBtn">
+                                Send
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="/js/chatbot.js"></script>
+    <script src="/js/dashboard.js"></script>
+</body>
+</html>
+

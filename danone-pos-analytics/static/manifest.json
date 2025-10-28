@@ -1,0 +1,19 @@
+{
+  "name": "Danone POS Analytics",
+  "short_name": "Danone POS",
+  "description": "AI-powered point-of-sale analytics and business intelligence for Danone",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0066cc",
+  "orientation": "any",
+  "scope": "/",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    }
+  ]
+}
+

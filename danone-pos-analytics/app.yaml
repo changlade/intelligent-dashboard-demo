@@ -1,0 +1,68 @@
+command: ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "8000"]
+
+# Configure OAuth scopes for Databricks services access
+scopes:
+  - "all-apis"
+
+# Configure authentication to exclude static assets from OAuth
+auth:
+  # Make these paths publicly accessible without authentication
+  public_paths:
+    # Exact manifest file paths
+    - "manifest.json"
+    - "/manifest.json"
+    - "./manifest.json"
+    - "static/manifest.json"
+    - "/static/manifest.json"
+    
+    # Other static assets
+    - "favicon.ico"
+    - "/favicon.ico"
+    - "asset-manifest.json"
+    - "/asset-manifest.json"
+    - "danone-logo.webp"
+    - "/danone-logo.webp"
+    
+    # Static directories
+    - "/static"
+    - "/static/**"
+    - "static"
+    - "static/**"
+    - "/public"
+    - "/public/**"
+    - "public"
+    - "public/**"
+    
+    # Health checks
+    - "/health"
+    - "/health/**"
+    - "health"
+    
+    # Wildcard patterns
+    - "*.json"
+    - "/*.json"
+    - "**/*.json"
+    - "*.ico"
+    - "/*.ico"
+    - "**/*.ico"
+    - "*.webp"
+    - "/*.webp"
+    - "**/*.webp"
+    - "*.css"
+    - "/*.css"
+    - "**/*.css"
+    - "*.js"
+    - "/*.js"
+    - "**/*.js"
+    - "*.map"
+    - "/*.map"
+    - "**/*.map"
+    
+    # Root level specific files (no wildcard for security)
+    - "/index.html"
+    - "index.html"
+    
+  # Require authentication for all other paths
+  require_auth: true
+  # Allow OPTIONS requests for CORS preflight
+  allow_options: true
