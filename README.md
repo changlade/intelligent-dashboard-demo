@@ -3,7 +3,10 @@
 A simple template for building Databricks Apps that combine Lakeview dashboards with Genie AI chatbots in a single-page interface.
 
 **Built with:** FastAPI + Vanilla HTML/CSS/JS (no build tools needed!)
-![Uploading image.png…]()
+
+
+<img width="2547" height="1317" alt="image" src="https://github.com/user-attachments/assets/38ea8078-77e2-46a6-ac71-96f79114463f" />
+
 
 ---
 
